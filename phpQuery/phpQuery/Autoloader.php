@@ -33,4 +33,18 @@ class phpQuery_Autoloader implements Zend_Loader_Autoloader_Interface
 		$fragment = str_replace('_', '/', trim($fragment, '_'));
 		return include ($this->_baseDir . '/' . $fragment . '.php');
 	}
+
+	/**
+	 * Retrieve singleton instance
+	 *
+	 * @return phpQuery_Autoloader
+	 */
+	public static function getInstance()
+	{
+		if (null === self::$_instance)
+		{
+			self::$_instance = new self();
+		}
+		return self::$_instance;
+	}
 }
