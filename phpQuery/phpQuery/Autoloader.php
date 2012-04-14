@@ -20,7 +20,7 @@ class phpQuery_Autoloader implements Zend_Loader_Autoloader_Interface
 
 	public function autoload($class)
 	{
-		if (strlen($class) <= $this->_prefixLen)
+		if (strlen($class) < $this->_prefixLen)
 		{
 			return false;
 		}
@@ -29,7 +29,6 @@ class phpQuery_Autoloader implements Zend_Loader_Autoloader_Interface
 			return false;
 		}
 
-		$fragment = substr($class, $this->_prefixLen);
 		$fragment = explode('_', trim($fragment, '_'));
 		$fragment = implode('/', $fragment);
 		return include ($this->_baseDir . '/' . $fragment . '.php');
