@@ -39,12 +39,10 @@ class phpQuery_Autoloader implements Zend_Loader_Autoloader_Interface
 	 *
 	 * @return phpQuery_Autoloader
 	 */
-	public static function getInstance()
+	public static function getInstance($baseDir, $prefix)
 	{
-		if (null === self::$_instance)
-		{
-			self::$_instance = new self();
-		}
-		return self::$_instance;
+		$_instance = new self($baseDir, $prefix);
+
+		return $_instance;
 	}
 }
