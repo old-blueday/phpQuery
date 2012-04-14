@@ -13,7 +13,7 @@ class phpQuery_Autoloader implements Zend_Loader_Autoloader_Interface
 
 	public function __construct($baseDir, $prefix)
 	{
-		$this->_baseDir = $baseDir;
+		$this->_baseDir = rtrim(str_repace('\\', '/', $baseDir), '/').'/';
 		$this->_prefix = $prefix;
 		$this->_prefixLen = strlen($prefix);
 	}
