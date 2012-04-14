@@ -1309,7 +1309,7 @@ set_include_path(
 );
 // why ? no __call nor __get for statics in php...
 // XXX __callStatic will be available in PHP 5.3
-phpQuery::$plugins = new phpQueryPlugins();
+phpQuery::$plugins = new phpQuery_Plugins();
 // include bootstrap file (personal library config)
 if (file_exists(dirname(__FILE__).'/phpQuery/bootstrap.php'))
 	require_once dirname(__FILE__).'/phpQuery/bootstrap.php';

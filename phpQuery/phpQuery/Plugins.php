@@ -12,7 +12,7 @@
  * @package phpQuery
  * @todo move plugin methods here (as statics)
  */
-class phpQueryPlugins {
+class phpQuery_Plugins {
 	public function __call($method, $args) {
 		if (isset(phpQuery::$extendStaticMethods[$method])) {
 			$return = call_user_func_array(
