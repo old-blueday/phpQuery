@@ -38,6 +38,7 @@ class phpQuery_Autoloader implements Zend_Loader_Autoloader_Interface
 	 * Retrieve singleton instance
 	 *
 	 * @return phpQuery_Autoloader
+	 * @example phpQuery_Autoloader::getInstance(dirname(__FILE__), 'phpQuery');
 	 */
 	public static function getInstance($baseDir, $prefix)
 	{
