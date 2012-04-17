@@ -1,4 +1,5 @@
 <?php
+
 /**
  * phpQuery_Dom_DOMEvent class.
  *
@@ -8,7 +9,8 @@
  * @package phpQuery
  * @todo implement ArrayAccess ?
  */
-class phpQuery_Dom_DOMEvent {
+class phpQuery_Dom_DOMEvent
+{
 	/**
 	 * Returns a boolean indicating whether the event bubbles up through the DOM or not.
 	 *
@@ -33,7 +35,7 @@ class phpQuery_Dom_DOMEvent {
 	 * @var unknown_type
 	 * @link http://developer.mozilla.org/en/DOM/event.detail
 	 */
-	public $detail;	// ???
+	public $detail; // ???
 	/**
 	 * Used to indicate which phase of the event flow is currently being evaluated.
 	 *
@@ -42,7 +44,7 @@ class phpQuery_Dom_DOMEvent {
 	 * @var unknown_type
 	 * @link http://developer.mozilla.org/en/DOM/event.eventPhase
 	 */
-	public $eventPhase;	// ???
+	public $eventPhase; // ???
 	/**
 	 * The explicit original target of the event (Mozilla-specific).
 	 *
@@ -58,7 +60,7 @@ class phpQuery_Dom_DOMEvent {
 	 *
 	 * @var unknown_type
 	 */
-	public $originalTarget;	// moz only
+	public $originalTarget; // moz only
 	/**
 	 * Identifies a secondary target for the event.
 	 *
@@ -83,25 +85,28 @@ class phpQuery_Dom_DOMEvent {
 	public $type;
 	public $runDefault = true;
 	public $data = null;
-	public function __construct($data) {
-		foreach($data as $k => $v) {
+	public function __construct($data)
+	{
+		foreach ($data as $k => $v)
+		{
 			$this->$k = $v;
 		}
-		if (! $this->timeStamp)
-			$this->timeStamp = time();
+		if (!$this->timeStamp) $this->timeStamp = time();
 	}
 	/**
 	 * Cancels the event (if it is cancelable).
 	 *
 	 */
-	public function preventDefault() {
+	public function preventDefault()
+	{
 		$this->runDefault = false;
 	}
 	/**
 	 * Stops the propagation of events further along in the DOM.
 	 *
 	 */
-	public function stopPropagation() {
+	public function stopPropagation()
+	{
 		$this->bubbles = false;
 	}
 }
