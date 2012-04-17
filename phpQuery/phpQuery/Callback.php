@@ -24,7 +24,7 @@
  * @TODO honor paramStructure
  */
 class Callback
-	implements ICallbackNamed {
+	implements phpQuery_ICallbackNamed {
 	public $callback = null;
 	public $params = null;
 	protected $name;
@@ -75,7 +75,7 @@ class CallbackBody extends Callback {
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
  */
 class CallbackReturnReference extends Callback
-	implements ICallbackNamed {
+	implements phpQuery_ICallbackNamed {
 	protected $reference;
 	public function __construct(&$reference, $name = null){
 		$this->reference =& $reference;
@@ -97,7 +97,7 @@ class CallbackReturnReference extends Callback
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
  */
 class CallbackReturnValue extends Callback
-	implements ICallbackNamed {
+	implements phpQuery_ICallbackNamed {
 	protected $value;
 	protected $name;
 	public function __construct($value, $name = null){
