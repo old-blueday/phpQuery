@@ -602,8 +602,13 @@ abstract class phpQuery
 	/**
 	 * @return Zend_Loader_PluginLoader
 	 */
-	public static function &pluginLoader()
+	public static function &pluginLoader($pluginLoader = null)
 	{
+		if ($pluginLoader)
+		{
+			phpQuery::$pluginLoader = &$pluginLoader;
+		}
+
 		if (!isset(phpQuery::$pluginLoader))
 		{
 			$path_base = dirname(__file__);
