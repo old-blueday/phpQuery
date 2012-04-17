@@ -53,7 +53,7 @@ abstract class phpQueryPlugin_Scripts {
 	/**
 	 * Extend scripts' namespace with $name related with $callback.
 	 * 
-	 * Callback parameter order looks like this:
+	 * phpQuery_Callback parameter order looks like this:
 	 * - $this
 	 * - $params
 	 * - &$return

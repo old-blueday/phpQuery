@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Callback class introduces currying-like pattern.
+ * phpQuery_Callback class introduces currying-like pattern.
  *
  * Example:
  * function foo($param1, $param2, $param3) {
  *   var_dump($param1, $param2, $param3);
  * }
- * $fooCurried = new Callback('foo',
+ * $fooCurried = new phpQuery_Callback('foo',
  *   'param1 is now statically set',
  *   new phpQuery_CallbackParam, new phpQuery_CallbackParam
  * );
@@ -15,7 +15,7 @@
  * 	array('param2 value', 'param3 value'
  * );
  *
- * Callback class is supported in all phpQuery methods which accepts callbacks.
+ * phpQuery_Callback class is supported in all phpQuery methods which accepts callbacks.
  *
  * @link http://code.google.com/p/phpquery/wiki/Callbacks#Param_Structures
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
@@ -23,7 +23,7 @@
  * @TODO??? return fake forwarding function created via create_function
  * @TODO honor paramStructure
  */
-class Callback
+class phpQuery_Callback
 	implements phpQuery_ICallbackNamed {
 	public $callback = null;
 	public $params = null;
@@ -32,7 +32,7 @@ class Callback
 			$param3 = null) {
 		$params = func_get_args();
 		$params = array_slice($params, 1);
-		if ($callback instanceof Callback) {
+		if ($callback instanceof phpQuery_Callback) {
 			// TODO implement recurention
 		} else {
 			$this->callback = $callback;
@@ -40,7 +40,7 @@ class Callback
 		}
 	}
 	public function getName() {
-		return 'Callback: '.$this->name;
+		return 'phpQuery_Callback: '.$this->name;
 	}
 	public function hasName() {
 		return isset($this->name) && $this->name;
@@ -52,7 +52,7 @@ class Callback
 	// TODO test me
 //	public function addParams() {
 //		$params = func_get_args();
-//		return new Callback($this->callback, $this->params+$params);
+//		return new phpQuery_Callback($this->callback, $this->params+$params);
 //	}
 }
 

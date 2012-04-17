@@ -6,11 +6,11 @@
  */
 
 /**
- * Callback type which on execution returns value passed during creation.
+ * phpQuery_Callback type which on execution returns value passed during creation.
  *
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
  */
-class phpQuery_CallbackReturnValue extends Callback implements phpQuery_ICallbackNamed
+class phpQuery_CallbackReturnValue extends phpQuery_Callback implements phpQuery_ICallbackNamed
 {
 	protected $value;
 	protected $name;
@@ -30,7 +30,7 @@ class phpQuery_CallbackReturnValue extends Callback implements phpQuery_ICallbac
 	}
 	public function getName()
 	{
-		return 'Callback: ' . $this->name;
+		return 'phpQuery_Callback: ' . $this->name;
 	}
 	public function hasName()
 	{

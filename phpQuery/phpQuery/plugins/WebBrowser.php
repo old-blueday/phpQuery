@@ -264,7 +264,7 @@ class phpQueryPlugin_WebBrowser {
 				'url' => resolve_url($e->data[0], $node->attr('href')),
 				'referer' => $node->document->location,
 			), $xhr);
-			if ((! $callback || !($callback instanceof Callback)) && $e->data[1])
+			if ((! $callback || !($callback instanceof phpQuery_Callback)) && $e->data[1])
 				$callback = $e->data[1];
 			if ($xhr->getLastResponse()->isSuccessful() && $callback)
 				phpQuery::callbackRun($callback, array(
@@ -309,7 +309,7 @@ class phpQueryPlugin_WebBrowser {
 		if ($node->attr('enctype'))
 			$options['contentType'] = $node->attr('enctype');
 		$xhr = phpQuery::ajax($options, $xhr);
-		if ((! $callback || !($callback instanceof Callback)) && $e->data[1])
+		if ((! $callback || !($callback instanceof phpQuery_Callback)) && $e->data[1])
 			$callback = $e->data[1];
 		if ($xhr->getLastResponse()->isSuccessful() && $callback)
 			phpQuery::callbackRun($callback, array(

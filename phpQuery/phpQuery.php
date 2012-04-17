@@ -21,7 +21,7 @@ define('DOMNODE', 'DOMNode');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_DOMEvent.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_DOMDocumentWrapper.php');
 require_once(dirname(__FILE__).'/phpQuery/phpQueryEvents.php');
-require_once(dirname(__FILE__).'/phpQuery/Callback.php');
+//require_once(dirname(__FILE__).'/phpQuery/phpQuery_Callback.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_Object.php');
 require_once(dirname(__FILE__).'/phpQuery/compat/mbstring.php');
 /**
@@ -1065,7 +1065,7 @@ abstract class phpQuery {
 	}
 	/**
 	 *
-	 * @param $callback Callback
+	 * @param $callback phpQuery_Callback
 	 * @param $params
 	 * @param $paramStructure
 	 * @return unknown_type
@@ -1079,7 +1079,7 @@ abstract class phpQuery {
 				$callback->callback = $params[0];
 			return true;
 		}
-		if ($callback instanceof Callback) {
+		if ($callback instanceof phpQuery_Callback) {
 			$paramStructure = $callback->params;
 			$callback = $callback->callback;
 		}

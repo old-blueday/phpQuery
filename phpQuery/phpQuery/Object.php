@@ -1143,7 +1143,7 @@ class phpQuery_Object
 	 * Enter description here...
 	 * jQuery difference.
 	 *
-	 * Callback:
+	 * phpQuery_Callback:
 	 * - $index int
 	 * - $node DOMNode
 	 *
@@ -1173,7 +1173,7 @@ class phpQuery_Object
 	 * @link http://docs.jquery.com/Traversing/filter
 	 */
 	public function filter($selectors, $_skipHistory = false) {
-		if ($selectors instanceof Callback OR $selectors instanceof Closure)
+		if ($selectors instanceof phpQuery_Callback OR $selectors instanceof Closure)
 			return $this->filterCallback($selectors, $_skipHistory);
 		if (! $_skipHistory)
 			$this->elementsBackup = $this->elements;

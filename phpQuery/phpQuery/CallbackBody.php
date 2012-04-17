@@ -6,11 +6,11 @@
  */
 
 /**
- * Shorthand for new Callback(create_function(...), ...);
+ * Shorthand for new phpQuery_Callback(create_function(...), ...);
  *
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
  */
-class phpQuery_CallbackBody extends Callback
+class phpQuery_CallbackBody extends phpQuery_Callback
 {
 	public function __construct($paramList, $code, $param1 = null, $param2 = null, $param3 = null)
 	{

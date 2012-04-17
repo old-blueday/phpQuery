@@ -5,7 +5,7 @@
  * @copyright 2012
  */
 
-//class CallbackReference extends Callback
+//class CallbackReference extends phpQuery_Callback
 //{
 //	/**
 //	 *

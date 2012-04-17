@@ -12,7 +12,7 @@
  *
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
  */
-class phpQuery_CallbackParameterToReference extends Callback
+class phpQuery_CallbackParameterToReference extends phpQuery_Callback
 {
 	/**
 	 * @param $reference
