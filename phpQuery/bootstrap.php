@@ -27,10 +27,13 @@ function pq($arg1, $context = null)
 	$args = func_get_args();
 	return call_user_func_array(array('phpQuery', 'pq'), $args);
 }
+
 // add plugins dir and Zend framework to include path
 set_include_path(get_include_path() . PATH_SEPARATOR . dirname(__file__) . '/phpQuery/' . PATH_SEPARATOR . dirname(__file__) . '/phpQuery/plugins/');
+
 // why ? no __call nor __get for statics in php...
 // XXX __callStatic will be available in PHP 5.3
 phpQuery::$plugins = new phpQuery_Plugins();
+
 // include bootstrap file (personal library config)
 if (file_exists(dirname(__file__) . '/phpQuery/bootstrap.php')) require_once dirname(__file__) . '/phpQuery/bootstrap.php';
