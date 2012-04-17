@@ -10,7 +10,7 @@
  *
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
  */
-class CallbackBody extends Callback
+class phpQuery_CallbackBody extends Callback
 {
 	public function __construct($paramList, $code, $param1 = null, $param2 = null, $param3 = null)
 	{
