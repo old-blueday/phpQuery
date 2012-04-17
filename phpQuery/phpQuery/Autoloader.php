@@ -11,9 +11,14 @@ class phpQuery_Autoloader implements Zend_Loader_Autoloader_Interface
 	protected $_prefix;
 	protected $_prefixLen;
 
+	/**
+	 * @var array Default autoloader callback
+	 */
+	protected $_defaultAutoloader = array('Zend_Loader', 'loadClass');
+
 	public function __construct($baseDir, $prefix)
 	{
-		$this->_baseDir = rtrim(str_repace('\\', '/', $baseDir), '/') . '/';
+		$this->_baseDir = rtrim(str_replace('\\', '/', $baseDir), '/') . '/';
 		$this->_prefix = $prefix;
 		$this->_prefixLen = strlen($prefix);
 	}
@@ -28,10 +33,10 @@ class phpQuery_Autoloader implements Zend_Loader_Autoloader_Interface
 		{
 			return false;
 		}
-
-		$fragment = explode('_', trim($fragment, '_'));
-		$fragment = implode('/', $fragment);
-		return include ($this->_baseDir . $fragment . '.php');
+		if (call_user_func($this->_defaultAutoloader, $class, $this->_baseDir))
+		{
+			return true;
+		}
 	}
 
 	/**
