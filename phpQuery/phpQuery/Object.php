@@ -936,10 +936,10 @@ class phpQuery_Object
 			case 'reset':
 				$this->elements = phpQuery::merge(
 					$this->map(array($this, 'is'),
-						"input[type=$class]", new CallbackParam()
+						"input[type=$class]", new phpQuery_CallbackParam()
 					),
 					$this->map(array($this, 'is'),
-						"button[type=$class]", new CallbackParam()
+						"button[type=$class]", new phpQuery_CallbackParam()
 					)
 				);
 			break;
@@ -951,7 +951,7 @@ class phpQuery_Object
 			case 'input':
 				$this->elements = $this->map(
 					array($this, 'is'),
-					'input', new CallbackParam()
+					'input', new phpQuery_CallbackParam()
 				)->elements;
 			break;
 			case 'password':
@@ -962,7 +962,7 @@ class phpQuery_Object
 			case 'file':
 				$this->elements = $this->map(
 					array($this, 'is'),
-					"input[type=$class]", new CallbackParam()
+					"input[type=$class]", new phpQuery_CallbackParam()
 				)->elements;
 			break;
 			case 'parent':
@@ -984,7 +984,7 @@ class phpQuery_Object
 			case 'checked':
 				$this->elements = $this->map(
 					array($this, 'is'),
-					"[$class]", new CallbackParam()
+					"[$class]", new phpQuery_CallbackParam()
 				)->elements;
 			break;
 			case 'enabled':
@@ -1050,7 +1050,7 @@ class phpQuery_Object
 								return $node;
 							else
 								return null;'),
-						new CallbackParam(), $param
+						new phpQuery_CallbackParam(), $param
 					);
 				else if (mb_strlen($param) > 1 && $param{1} == 'n')
 					// an+b
@@ -1090,7 +1090,7 @@ class phpQuery_Object
 //									? $node
 //									: null;
 							'),
-						new CallbackParam(), $param
+						new phpQuery_CallbackParam(), $param
 					);
 				else
 					// index
@@ -1103,7 +1103,7 @@ class phpQuery_Object
 								return $node;
 							else
 								return null;'),
-						new CallbackParam(), $param
+						new phpQuery_CallbackParam(), $param
 					);
 				$this->elements = $mapped->elements;
 			break;

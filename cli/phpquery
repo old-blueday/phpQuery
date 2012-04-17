@@ -24,7 +24,7 @@ if (isset($argv[1]) && parse_url($argv[1], PHP_URL_HOST)) {
 		phpQuery::ajaxAllowURL($argv[1]);
 		// TODO support contentType passing (from response headers)
 		phpQuery::get($argv[1],
-			new Callback('phpQueryCli', new CallbackParam, array_slice($argv, 2))
+			new Callback('phpQueryCli', new phpQuery_CallbackParam, array_slice($argv, 2))
 		);
 	} else {
 		// use file wrapper when no Ajax

@@ -1049,7 +1049,7 @@ abstract class phpQuery {
 			$vv = phpQuery::callbackRun($callback, array($v), $paramStructure);
 //			$callbackArgs = $args;
 //			foreach($args as $i => $arg) {
-//				$callbackArgs[$i] = $arg instanceof CallbackParam
+//				$callbackArgs[$i] = $arg instanceof phpQuery_CallbackParam
 //					? $v
 //					: $arg;
 //			}
@@ -1073,7 +1073,7 @@ abstract class phpQuery {
 	public static function callbackRun($callback, $params = array(), $paramStructure = null) {
 		if (! $callback)
 			return;
-		if ($callback instanceof CallbackParameterToReference) {
+		if ($callback instanceof phpQuery_CallbackParameterToReference) {
 			// TODO support ParamStructure to select which $param push to reference
 			if (isset($params[0]))
 				$callback->callback = $params[0];
@@ -1087,7 +1087,7 @@ abstract class phpQuery {
 			return call_user_func_array($callback, $params);
 		$p = 0;
 		foreach($paramStructure as $i => $v) {
-			$paramStructure[$i] = $v instanceof CallbackParam
+			$paramStructure[$i] = $v instanceof phpQuery_CallbackParam
 				? $params[$p++]
 				: $v;
 		}

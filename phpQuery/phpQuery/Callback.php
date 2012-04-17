@@ -9,7 +9,7 @@
  * }
  * $fooCurried = new Callback('foo',
  *   'param1 is now statically set',
- *   new CallbackParam, new CallbackParam
+ *   new phpQuery_CallbackParam, new phpQuery_CallbackParam
  * );
  * phpQuery::callbackRun($fooCurried,
  * 	array('param2 value', 'param3 value'
