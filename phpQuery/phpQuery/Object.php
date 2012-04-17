@@ -22,7 +22,7 @@ class phpQuery_Object
 	public $charset = null;
 	/**
 	 *
-	 * @var DOMDocumentWrapper
+	 * @var phpQuery_DOMDocumentWrapper
 	 */
 	public $documentWrapper = null;
 	/**

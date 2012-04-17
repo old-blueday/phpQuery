@@ -1,6 +1,6 @@
 <?php
 /**
- * DOMDocumentWrapper class simplifies work with DOMDocument.
+ * phpQuery_DOMDocumentWrapper class simplifies work with DOMDocument.
  *
  * Know bug:
  * - in XHTML fragments, <br /> changes to <br clear="none" />
@@ -9,7 +9,7 @@
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
  * @package phpQuery
  */
-class DOMDocumentWrapper {
+class phpQuery_DOMDocumentWrapper {
 	/**
 	 * @var DOMDocument
 	 */
@@ -474,10 +474,10 @@ class DOMDocumentWrapper {
 	 * Creates new document fragment.
 	 *
 	 * @param $source
-	 * @return DOMDocumentWrapper
+	 * @return phpQuery_DOMDocumentWrapper
 	 */
 	protected function documentFragmentCreate($source, $charset = null) {
-		$fake = new DOMDocumentWrapper();
+		$fake = new phpQuery_DOMDocumentWrapper();
 		$fake->contentType = $this->contentType;
 		$fake->isXML = $this->isXML;
 		$fake->isHTML = $this->isHTML;
@@ -504,7 +504,7 @@ class DOMDocumentWrapper {
 	}
 	/**
 	 *
-	 * @param $document DOMDocumentWrapper
+	 * @param $document phpQuery_DOMDocumentWrapper
 	 * @param $markup
 	 * @return $document
 	 */
