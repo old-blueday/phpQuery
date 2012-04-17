@@ -23,37 +23,46 @@
  * @TODO??? return fake forwarding function created via create_function
  * @TODO honor paramStructure
  */
-class phpQuery_Callback
-	implements phpQuery_ICallbackNamed {
+class phpQuery_Callback implements phpQuery_ICallbackNamed
+{
 	public $callback = null;
 	public $params = null;
 	protected $name;
-	public function __construct($callback, $param1 = null, $param2 = null,
-			$param3 = null) {
+
+	public function __construct($callback, $param1 = null, $param2 = null, $param3 = null)
+	{
 		$params = func_get_args();
 		$params = array_slice($params, 1);
-		if ($callback instanceof phpQuery_Callback) {
+		if ($callback instanceof phpQuery_Callback)
+		{
 			// TODO implement recurention
-		} else {
+		}
+		else
+		{
 			$this->callback = $callback;
 			$this->params = $params;
 		}
 	}
-	public function getName() {
-		return 'phpQuery_Callback: '.$this->name;
+
+	public function getName()
+	{
+		return 'phpQuery_Callback: ' . $this->name;
 	}
-	public function hasName() {
+
+	public function hasName()
+	{
 		return isset($this->name) && $this->name;
 	}
-	public function setName($name) {
+
+	public function setName($name)
+	{
 		$this->name = $name;
 		return $this;
 	}
+
 	// TODO test me
-//	public function addParams() {
-//		$params = func_get_args();
-//		return new phpQuery_Callback($this->callback, $this->params+$params);
-//	}
+	//	public function addParams() {
+	//		$params = func_get_args();
+	//		return new phpQuery_Callback($this->callback, $this->params+$params);
+	//	}
 }
-
-
