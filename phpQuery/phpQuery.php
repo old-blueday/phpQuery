@@ -20,7 +20,7 @@ define('DOMNODELIST', 'DOMNodeList');
 define('DOMNODE', 'DOMNode');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_DOMEvent.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_DOMDocumentWrapper.php');
-require_once(dirname(__FILE__).'/phpQuery/phpQueryEvents.php');
+//require_once(dirname(__FILE__).'/phpQuery/phpQuery_Events.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_Callback.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_Object.php');
 require_once(dirname(__FILE__).'/phpQuery/compat/mbstring.php');
@@ -788,14 +788,14 @@ abstract class phpQuery {
 			$client->setParameterPost($options['data']);
 		}
 		if (self::$active == 0 && $options['global'])
-			phpQueryEvents::trigger($documentID, 'ajaxStart');
+			phpQuery_Events::trigger($documentID, 'ajaxStart');
 		self::$active++;
 		// beforeSend callback
 		if (isset($options['beforeSend']) && $options['beforeSend'])
 			phpQuery::callbackRun($options['beforeSend'], array($client));
 		// ajaxSend event
 		if ($options['global'])
-			phpQueryEvents::trigger($documentID, 'ajaxSend', array($client, $options));
+			phpQuery_Events::trigger($documentID, 'ajaxSend', array($client, $options));
 		if (phpQuery::$debug) {
 			self::debug("{$options['type']}: {$options['url']}\n");
 			self::debug("Options: <pre>".var_export($options, true)."</pre>\n");
@@ -816,19 +816,19 @@ abstract class phpQuery {
 			if (isset($options['success']) && $options['success'])
 				phpQuery::callbackRun($options['success'], array($data, $response->getStatus(), $options));
 			if ($options['global'])
-				phpQueryEvents::trigger($documentID, 'ajaxSuccess', array($client, $options));
+				phpQuery_Events::trigger($documentID, 'ajaxSuccess', array($client, $options));
 		} else {
 			if (isset($options['error']) && $options['error'])
 				phpQuery::callbackRun($options['error'], array($client, $response->getStatus(), $response->getMessage()));
 			if ($options['global'])
-				phpQueryEvents::trigger($documentID, 'ajaxError', array($client, /*$response->getStatus(),*/$response->getMessage(), $options));
+				phpQuery_Events::trigger($documentID, 'ajaxError', array($client, /*$response->getStatus(),*/$response->getMessage(), $options));
 		}
 		if (isset($options['complete']) && $options['complete'])
 			phpQuery::callbackRun($options['complete'], array($client, $response->getStatus()));
 		if ($options['global'])
-			phpQueryEvents::trigger($documentID, 'ajaxComplete', array($client, $options));
+			phpQuery_Events::trigger($documentID, 'ajaxComplete', array($client, $options));
 		if ($options['global'] && ! --self::$active)
-			phpQueryEvents::trigger($documentID, 'ajaxStop');
+			phpQuery_Events::trigger($documentID, 'ajaxStop');
 		return $client;
 //		if (is_null($domId))
 //			$domId = self::$defaultDocumentID ? self::$defaultDocumentID : false;

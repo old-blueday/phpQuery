@@ -1396,7 +1396,7 @@ class phpQuery_Object
 	 */
 	public function trigger($type, $data = array()) {
 		foreach($this->elements as $node)
-			phpQueryEvents::trigger($this->getDocumentID(), $type, $data, $node);
+			phpQuery_Events::trigger($this->getDocumentID(), $type, $data, $node);
 		return $this;
 	}
 	/**
@@ -1428,7 +1428,7 @@ class phpQuery_Object
 			$data = null;
 		}
 		foreach($this->elements as $node)
-			phpQueryEvents::add($this->getDocumentID(), $node, $type, $data, $callback);
+			phpQuery_Events::add($this->getDocumentID(), $node, $type, $data, $callback);
 		return $this;
 	}
 	/**
@@ -1442,7 +1442,7 @@ class phpQuery_Object
 	 */
 	public function unbind($type = null, $callback = null) {
 		foreach($this->elements as $node)
-			phpQueryEvents::remove($this->getDocumentID(), $node, $type, $callback);
+			phpQuery_Events::remove($this->getDocumentID(), $node, $type, $callback);
 		return $this;
 	}
 	/**
@@ -1754,7 +1754,7 @@ class phpQuery_Object
 				'target' => $node,
 				'type' => 'DOMNodeRemoved'
 			));
-			phpQueryEvents::trigger($this->getDocumentID(),
+			phpQuery_Events::trigger($this->getDocumentID(),
 				$event->type, array($event), $node
 			);
 		}
@@ -1766,7 +1766,7 @@ class phpQuery_Object
 				'target' => $node,
 				'type' => 'change'
 			));
-			phpQueryEvents::trigger($this->getDocumentID(),
+			phpQuery_Events::trigger($this->getDocumentID(),
 				$event->type, array($event), $node
 			);
 		}
@@ -2186,7 +2186,7 @@ class phpQuery_Object
 					'target' => $insert,
 					'type' => 'DOMNodeInserted'
 				));
-				phpQueryEvents::trigger($this->getDocumentID(),
+				phpQuery_Events::trigger($this->getDocumentID(),
 					$event->type, array($event), $insert
 				);
 			}
@@ -2597,7 +2597,7 @@ class phpQuery_Object
 			));
 		}
 		if ($event) {
-			phpQueryEvents::trigger($this->getDocumentID(),
+			phpQuery_Events::trigger($this->getDocumentID(),
 				$event->type, array($event), $node
 			);
 		}
