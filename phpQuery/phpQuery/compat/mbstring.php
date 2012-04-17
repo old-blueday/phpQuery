@@ -1,4 +1,5 @@
 <?php
+
 // -- Multibyte Compatibility functions ---------------------------------------
 // http://svn.iphonewebdev.com/lace/lib/mb_compat.php
 
@@ -9,7 +10,10 @@
  */
 if (!function_exists('mb_internal_encoding'))
 {
-	function mb_internal_encoding($enc) {return true; }
+	function mb_internal_encoding($enc)
+	{
+		return true;
+	}
 }
 
 /**
@@ -19,7 +23,10 @@ if (!function_exists('mb_internal_encoding'))
  */
 if (!function_exists('mb_regex_encoding'))
 {
-	function mb_regex_encoding($enc) {return true; }
+	function mb_regex_encoding($enc)
+	{
+		return true;
+	}
 }
 
 /**
@@ -42,7 +49,7 @@ if (!function_exists('mb_strlen'))
  */
 if (!function_exists('mb_strpos'))
 {
-	function mb_strpos($haystack, $needle, $offset=0)
+	function mb_strpos($haystack, $needle, $offset = 0)
 	{
 		return strpos($haystack, $needle, $offset);
 	}
@@ -54,7 +61,7 @@ if (!function_exists('mb_strpos'))
  */
 if (!function_exists('mb_stripos'))
 {
-	function mb_stripos($haystack, $needle, $offset=0)
+	function mb_stripos($haystack, $needle, $offset = 0)
 	{
 		return stripos($haystack, $needle, $offset);
 	}
@@ -67,7 +74,7 @@ if (!function_exists('mb_stripos'))
  */
 if (!function_exists('mb_substr'))
 {
-	function mb_substr($str, $start, $length=0)
+	function mb_substr($str, $start, $length = 0)
 	{
 		return substr($str, $start, $length);
 	}
@@ -85,4 +92,3 @@ if (!function_exists('mb_substr_count'))
 		return substr_count($haystack, $needle);
 	}
 }
-
