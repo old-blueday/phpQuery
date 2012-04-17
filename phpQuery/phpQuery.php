@@ -18,7 +18,7 @@ define('DOMDOCUMENT', 'DOMDocument');
 define('DOMELEMENT', 'DOMElement');
 define('DOMNODELIST', 'DOMNodeList');
 define('DOMNODE', 'DOMNode');
-//require_once(dirname(__FILE__).'/phpQuery/phpQuery_DOMEvent.php');
+//require_once(dirname(__FILE__).'/phpQuery/phpQuery_Dom_DOMEvent.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_Dom_DOMDocumentWrapper.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_Events.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_Callback.php');
