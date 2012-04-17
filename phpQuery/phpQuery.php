@@ -626,6 +626,12 @@ abstract class phpQuery
 		if ($pluginLoader)
 		{
 			self::$pluginLoader = &$pluginLoader;
+			$method = 'load';
+
+			if (!method_exists(self::$pluginLoader, $method) || !is_callable(array(self::$pluginLoader, $method)))
+			{
+				throw new Exception("Method '{$method}' doesnt exist");
+			}
 		}
 
 		if (!isset(self::$pluginLoader))
