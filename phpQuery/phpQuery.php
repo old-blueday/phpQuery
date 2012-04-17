@@ -598,6 +598,25 @@ abstract class phpQuery
 		}
 		return true;
 	}
+
+	/**
+	 * @return Zend_Loader_PluginLoader
+	 */
+	public static function &pluginLoader()
+	{
+		if (!isset(phpQuery::$pluginLoader))
+		{
+			$path_base = dirname(__file__);
+
+			phpQuery::$pluginLoader = new Zend_Loader_PluginLoader();
+
+			phpQuery::$pluginLoader->addPrefixPath('phpQueryPlugin', $path_base . '/phpQuery/plugins/');
+			phpQuery::$pluginLoader->addPrefixPath('phpQueryObjectPlugin', $path_base . '/phpQuery/plugins/');
+		}
+
+		return phpQuery::$pluginLoader;
+	}
+
 	/**
 	 * Unloades all or specified document from memory.
 	 *
