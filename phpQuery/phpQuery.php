@@ -627,7 +627,7 @@ abstract class phpQuery
 		{
 			if (!($pluginLoader instanceof Zend_Loader_PluginLoader_Interface))
 			{
-				throw new Exception('$pluginLoader must be an instance of Zend_Loader_PluginLoader_Interface');
+				throw new Zend_Loader_PluginLoader_Exception('$pluginLoader must be an instance of Zend_Loader_PluginLoader_Interface');
 			}
 
 			self::$pluginLoader = &$pluginLoader;
