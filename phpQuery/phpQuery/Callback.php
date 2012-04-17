@@ -67,4 +67,3 @@ class Callback
 //		$this->callback =& $reference;
 //	}
 //}
-class CallbackParam {}
