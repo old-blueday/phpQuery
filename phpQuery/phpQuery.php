@@ -58,6 +58,12 @@ abstract class phpQuery
 	 * @var phpQuery_Plugins
 	 */
 	public static $plugins = array();
+
+	/**
+	 * @var Zend_Loader_PluginLoader
+	 */
+	protected static $pluginLoader = null;
+
 	/**
 	 * List of loaded plugins.
 	 *
@@ -555,10 +561,20 @@ abstract class phpQuery
 		//		if (strpos($class, 'phpQuery') === 0)
 		//			$class = substr($class, 8);
 		if (in_array($class, self::$pluginsLoaded)) return true;
+
 		if (!$file) $file = $class . '.php';
 		$objectClassExists = class_exists('phpQueryObjectPlugin_' . $class);
 		$staticClassExists = class_exists('phpQueryPlugin_' . $class);
+
+		/*
 		if (!$objectClassExists && !$staticClassExists) require_once ($file);
+		*/
+
+		if (!self::pluginLoader()->load($class))
+		{
+			return false;
+		}
+
 		self::$pluginsLoaded[] = $class;
 		// static methods
 		if (class_exists('phpQueryPlugin_' . $class))
@@ -606,20 +622,20 @@ abstract class phpQuery
 	{
 		if ($pluginLoader)
 		{
-			phpQuery::$pluginLoader = &$pluginLoader;
+			self::$pluginLoader = &$pluginLoader;
 		}
 
-		if (!isset(phpQuery::$pluginLoader))
+		if (!isset(self::$pluginLoader))
 		{
 			$path_base = dirname(__file__);
 
-			phpQuery::$pluginLoader = new Zend_Loader_PluginLoader();
+			self::$pluginLoader = new Zend_Loader_PluginLoader();
 
-			phpQuery::$pluginLoader->addPrefixPath('phpQueryPlugin', $path_base . '/phpQuery/plugins/');
-			phpQuery::$pluginLoader->addPrefixPath('phpQueryObjectPlugin', $path_base . '/phpQuery/plugins/');
+			self::$pluginLoader->addPrefixPath('phpQueryPlugin', $path_base . '/phpQuery/plugins/');
+			self::$pluginLoader->addPrefixPath('phpQueryObjectPlugin', $path_base . '/phpQuery/plugins/');
 		}
 
-		return phpQuery::$pluginLoader;
+		return self::$pluginLoader;
 	}
 
 	/**
