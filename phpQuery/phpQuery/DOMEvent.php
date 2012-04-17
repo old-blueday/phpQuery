@@ -1,6 +1,6 @@
 <?php
 /**
- * DOMEvent class.
+ * phpQuery_DOMEvent class.
  *
  * Based on
  * @link http://developer.mozilla.org/En/DOM:event
@@ -8,7 +8,7 @@
  * @package phpQuery
  * @todo implement ArrayAccess ?
  */
-class DOMEvent {
+class phpQuery_DOMEvent {
 	/**
 	 * Returns a boolean indicating whether the event bubbles up through the DOM or not.
 	 *

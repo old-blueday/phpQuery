@@ -34,13 +34,13 @@ abstract class phpQueryEvents {
 					->trigger($type, $data);
 			}
 		} else {
-			if (isset($data[0]) && $data[0] instanceof DOMEvent) {
+			if (isset($data[0]) && $data[0] instanceof phpQuery_DOMEvent) {
 				$event = $data[0];
 				$event->relatedTarget = $event->target;
 				$event->target = $node;
 				$data = array_slice($data, 1);
 			} else {
-				$event = new DOMEvent(array(
+				$event = new phpQuery_DOMEvent(array(
 					'type' => $type,
 					'target' => $node,
 					'timeStamp' => time(),

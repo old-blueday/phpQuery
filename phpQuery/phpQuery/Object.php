@@ -1750,7 +1750,7 @@ class phpQuery_Object
 				$this->debug("Removing '{$node->tagName}'");
 			$node->parentNode->removeChild($node);
 			// Mutation event
-			$event = new DOMEvent(array(
+			$event = new phpQuery_DOMEvent(array(
 				'target' => $node,
 				'type' => 'DOMNodeRemoved'
 			));
@@ -1762,7 +1762,7 @@ class phpQuery_Object
 	}
 	protected function markupEvents($newMarkup, $oldMarkup, $node) {
 		if ($node->tagName == 'textarea' && $newMarkup != $oldMarkup) {
-			$event = new DOMEvent(array(
+			$event = new phpQuery_DOMEvent(array(
 				'target' => $node,
 				'type' => 'change'
 			));
@@ -2182,7 +2182,7 @@ class phpQuery_Object
 						break;
 				}
 				// Mutation event
-				$event = new DOMEvent(array(
+				$event = new phpQuery_DOMEvent(array(
 					'target' => $insert,
 					'type' => 'DOMNodeInserted'
 				));
@@ -2571,7 +2571,7 @@ class phpQuery_Object
 			&& $node->getAttribute('type') == 'checkbox';
 		$isOption = $node->tagName == 'option';
 		if ($isInputValue && $attr == 'value' && $oldValue != $node->getAttribute($attr)) {
-			$event = new DOMEvent(array(
+			$event = new phpQuery_DOMEvent(array(
 				'target' => $node,
 				'type' => 'change'
 			));
@@ -2581,7 +2581,7 @@ class phpQuery_Object
 				// un-check
 				|| (! $node->hasAttribute($attr) && $oldAttr)
 			)) {
-			$event = new DOMEvent(array(
+			$event = new phpQuery_DOMEvent(array(
 				'target' => $node,
 				'type' => 'change'
 			));
@@ -2591,7 +2591,7 @@ class phpQuery_Object
 				// un-select
 				|| (! $node->hasAttribute($attr) && $oldAttr)
 			)) {
-			$event = new DOMEvent(array(
+			$event = new phpQuery_DOMEvent(array(
 				'target' => $node->parentNode,
 				'type' => 'change'
 			));
