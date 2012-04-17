@@ -5,7 +5,7 @@
  * @copyright 2012
  */
 
-interface phpQuery_ICallbackNamed
+interface phpQuery_Callback_NamedInterface
 {
 	function hasName();
 	function getName();

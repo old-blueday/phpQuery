@@ -23,7 +23,7 @@
  * @TODO??? return fake forwarding function created via create_function
  * @TODO honor paramStructure
  */
-class phpQuery_Callback implements phpQuery_ICallbackNamed
+class phpQuery_Callback implements phpQuery_Callback_NamedInterface
 {
 	public $callback = null;
 	public $params = null;
