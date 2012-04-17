@@ -30,14 +30,26 @@ $class_check = array(
 	'phpQuery_Callback_NamedInterface',
 );
 
+$class_check_plugin = array(
+	'WebBrowser',
+	'Scripts',
+);
+
 $r = array();
 foreach($class_check as $_c)
 {
 	$r[$_c] = class_exists($_c) || interface_exists($_c);
 }
 
+$r_plugin = array();
+foreach($class_check_plugin as $_c)
+{
+	$r_plugin[$_c] = phpQuery::plugin($_c);
+}
+
 echo '<pre>';
 var_dump($r);
+var_dump($r_plugin);
 
 var_export(array_diff(get_declared_classes(), $_get_declared_classes, $class_check));
 var_export(array_diff(get_declared_interfaces(), $_get_declared_interfaces, $class_check));
