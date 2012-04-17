@@ -55,7 +55,7 @@ abstract class phpQuery
 	/**
 	 * Static namespace for plugins.
 	 *
-	 * @var object
+	 * @var phpQuery_Plugins
 	 */
 	public static $plugins = array();
 	/**
