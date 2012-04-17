@@ -22,8 +22,8 @@ Zend_Loader_Autoloader::getInstance()
 $class_check = array(
 	'phpQuery_Autoloader',
 	'phpQuery',
-	'phpQuery_DOMEvent',
-	'phpQuery_DOMDocumentWrapper',
+	'phpQuery_Dom_DOMEvent',
+	'phpQuery_Dom_DOMDocumentWrapper',
 	'phpQuery_Events',
 	'phpQuery_Callback_Param',
 	'phpQuery_Callback',
