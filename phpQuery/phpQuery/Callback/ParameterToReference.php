@@ -6,13 +6,13 @@
  */
 
 /**
- * phpQuery_CallbackParameterToReference can be used when we don't really want a callback,
- * only parameter passed to it. phpQuery_CallbackParameterToReference takes first
+ * phpQuery_Callback_ParameterToReference can be used when we don't really want a callback,
+ * only parameter passed to it. phpQuery_Callback_ParameterToReference takes first
  * parameter's value and passes it to reference.
  *
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
  */
-class phpQuery_CallbackParameterToReference extends phpQuery_Callback
+class phpQuery_Callback_ParameterToReference extends phpQuery_Callback
 {
 	/**
 	 * @param $reference

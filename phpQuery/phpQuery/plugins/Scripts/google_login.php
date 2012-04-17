@@ -25,7 +25,7 @@ if (! function_exists('ndfasui8923')) {
 				->parents('form')
 					->submit();
 	}
-	$ndfasui8923 = new phpQuery_Callback('ndfasui8923', new phpQuery_CallbackParam, compact(
+	$ndfasui8923 = new phpQuery_Callback('ndfasui8923', new phpQuery_Callback_Param, compact(
 		'config', 'self', 'return', 'params'
 	));
 }

@@ -10,7 +10,7 @@
  *
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
  */
-class phpQuery_CallbackReturnReference extends phpQuery_Callback implements phpQuery_ICallbackNamed
+class phpQuery_Callback_ReturnReference extends phpQuery_Callback implements phpQuery_ICallbackNamed
 {
 	protected $reference;
 	public function __construct(&$reference, $name = null)

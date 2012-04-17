@@ -5,6 +5,6 @@
  * @copyright 2012
  */
 
-class phpQuery_CallbackParam
+class phpQuery_Callback_Param
 {
 }

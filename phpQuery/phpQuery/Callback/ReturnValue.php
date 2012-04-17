@@ -10,7 +10,7 @@
  *
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
  */
-class phpQuery_CallbackReturnValue extends phpQuery_Callback implements phpQuery_ICallbackNamed
+class phpQuery_Callback_ReturnValue extends phpQuery_Callback implements phpQuery_ICallbackNamed
 {
 	protected $value;
 	protected $name;
