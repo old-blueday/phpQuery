@@ -19,7 +19,7 @@ class phpQuery {
 			print var_dump($text);
 	}
 }
-require_once('../phpQuery/phpQuery_DOMDocumentWrapper.php');
+require_once('../phpQuery/phpQuery_Dom_DOMDocumentWrapper.php');
 phpQuery::$debug = 2;
 
 /* ENCODINGS */
@@ -28,18 +28,18 @@ print '<meta http-equiv="Content-Type" content="text/html;charset=utf-8">';
 
 /* HTML */
 
-//$htmlIso = new phpQuery_DOMDocumentWrapper(
+//$htmlIso = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-iso88592.html')
 //);
-//$htmlIsoNoCharset = new phpQuery_DOMDocumentWrapper(
+//$htmlIsoNoCharset = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-iso88592-nocharset.html'),
 //	'text/html;charset=iso-8859-2'
 //);
-$htmlUtf = new phpQuery_DOMDocumentWrapper(
+$htmlUtf = new phpQuery_Dom_DOMDocumentWrapper(
 	file_get_contents('document-types/document-utf8.html')
 );
 var_dump($htmlUtf->markup());
-//$htmlUtfNoCharset = new phpQuery_DOMDocumentWrapper(
+//$htmlUtfNoCharset = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-utf8-nocharset.html'),
 //	'text/html;charset=utf-8'
 //);
@@ -54,17 +54,17 @@ var_dump($htmlUtf->markup());
 
 /* XML */
 
-//$xmlIso = new phpQuery_DOMDocumentWrapper(
+//$xmlIso = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-iso88592.xml')
 //);
-//$xmlIsoNoCharset = new phpQuery_DOMDocumentWrapper(
+//$xmlIsoNoCharset = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-iso88592-nocharset.xml'),
 //	'text/xml;charset=iso-8859-2'
 //);
-//$xmlUtf = new phpQuery_DOMDocumentWrapper(
+//$xmlUtf = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-utf8.xml')
 //);
-//$xmlUtfNoCharset = new phpQuery_DOMDocumentWrapper(
+//$xmlUtfNoCharset = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-utf8-nocharset.xml'),
 //	'text/xml;charset=utf-8'
 //);
@@ -77,17 +77,17 @@ var_dump($htmlUtf->markup());
 
 /* XHTML */
 
-//$xhtmlIso = new phpQuery_DOMDocumentWrapper(
+//$xhtmlIso = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-iso88592.xhtml')
 //);
-//$xhtmlIsoNoCharset = new phpQuery_DOMDocumentWrapper(
+//$xhtmlIsoNoCharset = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-iso88592-nocharset.xhtml'),
 //	'application/xhtml+xml;charset=iso-8859-2'
 //);
-//$xhtmlUtf = new phpQuery_DOMDocumentWrapper(
+//$xhtmlUtf = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-utf8.xhtml')
 //);
-//$xhtmlUtfNoCharset = new phpQuery_DOMDocumentWrapper(
+//$xhtmlUtfNoCharset = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-utf8-nocharset.xhtml'),
 //	'application/xhtml+xml'
 //);
@@ -106,7 +106,7 @@ var_dump($htmlUtf->markup());
 
 /* HTML fragment */
 
-//$htmlFragmentUtf = new phpQuery_DOMDocumentWrapper(
+//$htmlFragmentUtf = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-fragment-utf8.html')
 //);
 //$htmlFragmentUtf->markup();
@@ -116,7 +116,7 @@ var_dump($htmlUtf->markup());
 
 /* XML fragment */
 
-//$xmlFragmentUtf = new phpQuery_DOMDocumentWrapper(
+//$xmlFragmentUtf = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-fragment-utf8.xml'),
 //	'text/xml'nt var_dump($xhtmlFragmentUtf->document->saveXML());
 //$xhtmlFragmentUtf->markup();
@@ -131,7 +131,7 @@ var_dump($htmlUtf->markup());
 
 /* XHTML fragment */
 
-//$xhtmlFragmentUtf = new phpQuery_DOMDocumentWrapper(
+//$xhtmlFragmentUtf = new phpQuery_Dom_DOMDocumentWrapper(
 //	file_get_contents('document-types/document-fragment-utf8.xhtml'),
 //	'application/xhtml+xml'
 //);

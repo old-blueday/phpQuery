@@ -19,7 +19,7 @@ define('DOMELEMENT', 'DOMElement');
 define('DOMNODELIST', 'DOMNodeList');
 define('DOMNODE', 'DOMNode');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_DOMEvent.php');
-//require_once(dirname(__FILE__).'/phpQuery/phpQuery_DOMDocumentWrapper.php');
+//require_once(dirname(__FILE__).'/phpQuery/phpQuery_Dom_DOMDocumentWrapper.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_Events.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_Callback.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_Object.php');
@@ -318,7 +318,7 @@ abstract class phpQuery {
 	 * @return phpQuery_Object|QueryTemplatesSource|QueryTemplatesParse|QueryTemplatesSourceQuery
 	 */
 	public static function newDocumentPHP($markup = null, $contentType = "text/html") {
-		// TODO pass charset to phpToMarkup if possible (use phpQuery_DOMDocumentWrapper function)
+		// TODO pass charset to phpToMarkup if possible (use phpQuery_Dom_DOMDocumentWrapper function)
 		$markup = phpQuery::phpToMarkup($markup, self::$defaultCharset);
 		return self::newDocument($markup, $contentType);
 	}
@@ -491,10 +491,10 @@ abstract class phpQuery {
 				$document = clone $html;
 			} else {
 				// new document, add it to phpQuery::$documents
-				$wrapper = new phpQuery_DOMDocumentWrapper($html, $contentType, $documentID);
+				$wrapper = new phpQuery_Dom_DOMDocumentWrapper($html, $contentType, $documentID);
 			}
 		} else {
-			$wrapper = new phpQuery_DOMDocumentWrapper($html, $contentType, $documentID);
+			$wrapper = new phpQuery_Dom_DOMDocumentWrapper($html, $contentType, $documentID);
 		}
 //		$wrapper->id = $id;
 		// bind document
