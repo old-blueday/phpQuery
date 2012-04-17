@@ -4,7 +4,7 @@
  *
  * @author Tobiasz Cudnik <tobiasz.cudnik/gmail.com>
  */
-/** @var phpQueryObject */
+/** @var phpQuery_Object */
 $self = $self;
 $self
 	->find('script')

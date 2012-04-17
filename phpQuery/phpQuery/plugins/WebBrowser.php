@@ -13,7 +13,7 @@ class phpQueryObjectPlugin_WebBrowser {
 	/**
 	 * Enter description here...
 	 *
-	 * @param phpQueryObject $self
+	 * @param phpQuery_Object $self
 	 * @todo support 'reset' event
 	 */
 	public static function WebBrowser($self, $callback = null, $location = null) {

@@ -10,7 +10,7 @@ abstract class phpQueryEvents {
 	/**
 	 * Trigger a type of event on every matched element.
 	 *
-	 * @param DOMNode|phpQueryObject|string $document
+	 * @param DOMNode|phpQuery_Object|string $document
 	 * @param unknown_type $type
 	 * @param unknown_type $data
 	 *
@@ -50,7 +50,7 @@ abstract class phpQueryEvents {
 			while($node) {
 				// TODO whois
 				phpQuery::debug("Triggering ".($i?"bubbled ":'')."event '{$type}' on "
-					."node \n");//.phpQueryObject::whois($node)."\n");
+					."node \n");//.phpQuery_Object::whois($node)."\n");
 				$event->currentTarget = $node;
 				$eventNode = self::getNode($documentID, $node);
 				if (isset($eventNode->eventHandlers)) {
@@ -89,7 +89,7 @@ abstract class phpQueryEvents {
 	 * Binds a handler to one or more events (like click) for each matched element.
 	 * Can also bind custom events.
 	 *
-	 * @param DOMNode|phpQueryObject|string $document
+	 * @param DOMNode|phpQuery_Object|string $document
 	 * @param unknown_type $type
 	 * @param unknown_type $data Optional
 	 * @param unknown_type $callback
@@ -118,7 +118,7 @@ abstract class phpQueryEvents {
 	/**
 	 * Enter description here...
 	 *
-	 * @param DOMNode|phpQueryObject|string $document
+	 * @param DOMNode|phpQuery_Object|string $document
 	 * @param unknown_type $type
 	 * @param unknown_type $callback
 	 *

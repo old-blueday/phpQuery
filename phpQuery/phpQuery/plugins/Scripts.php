@@ -19,7 +19,7 @@ abstract class phpQueryObjectPlugin_Scripts {
 	/**
 	 * Enter description here...
 	 *
-	 * @param phpQueryObject $self
+	 * @param phpQuery_Object $self
 	 */
 	public static function script($self, $arg1) {
 		$params = func_get_args();

@@ -33,7 +33,7 @@ abstract class phpQueryObjectPlugin_example {
 	/**
 	 * Enter description here...
 	 *
-	 * @param phpQueryObject $self
+	 * @param phpQuery_Object $self
 	 */
 	public static function example($self, $arg1) {
 		// this method can be called on any phpQuery object, like this:
