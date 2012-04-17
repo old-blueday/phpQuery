@@ -625,13 +625,12 @@ abstract class phpQuery
 	{
 		if ($pluginLoader)
 		{
-			self::$pluginLoader = &$pluginLoader;
-			$method = 'load';
-
-			if (!method_exists(self::$pluginLoader, $method) || !is_callable(array(self::$pluginLoader, $method)))
+			if (!($pluginLoader instanceof Zend_Loader_PluginLoader_Interface))
 			{
-				throw new Exception("Method '{$method}' doesnt exist");
+				throw new Exception('$pluginLoader must be an instance of Zend_Loader_PluginLoader_Interface');
 			}
+
+			self::$pluginLoader = &$pluginLoader;
 		}
 
 		if (!isset(self::$pluginLoader))
