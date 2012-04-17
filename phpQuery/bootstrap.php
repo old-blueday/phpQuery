@@ -25,16 +25,16 @@ $class_check = array(
 	'phpQuery_DOMEvent',
 	'phpQuery_DOMDocumentWrapper',
 	'phpQuery_Events',
-	'phpQuery_CallbackParam',
+	'phpQuery_Callback_Param',
 	'phpQuery_Callback',
-	'phpQuery_CallbackBody',
-	'phpQuery_CallbackReturnReference',
-	'phpQuery_CallbackReturnValue',
-	'phpQuery_CallbackParameterToReference',
+	'phpQuery_Callback_Body',
+	'phpQuery_Callback_ReturnReference',
+	'phpQuery_Callback_ReturnValue',
+	'phpQuery_Callback_ParameterToReference',
 	'phpQuery_Plugins',
 	'phpQuery_Object',
 
-	'phpQuery_ICallbackNamed',
+	'phpQuery_Callback_NamedInterface',
 );
 
 $r = array();
