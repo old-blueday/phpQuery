@@ -25,6 +25,7 @@ define('DOMNODE', 'DOMNode');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_Callback.php');
 //require_once(dirname(__FILE__).'/phpQuery/phpQuery_Object.php');
 require_once (dirname(__file__) . '/phpQuery/compat/mbstring.php');
+
 /**
  * Static namespace for phpQuery functions.
  *
