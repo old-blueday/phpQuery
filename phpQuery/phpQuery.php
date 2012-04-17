@@ -616,6 +616,9 @@ abstract class phpQuery
 	}
 
 	/**
+	 * phpQuery plugins loader
+	 *
+	 * @param Zend_Loader_PluginLoader $pluginLoader
 	 * @return Zend_Loader_PluginLoader
 	 */
 	public static function &pluginLoader($pluginLoader = null)
