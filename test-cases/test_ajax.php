@@ -45,6 +45,28 @@ else {
 print "\n";
 
 
+// http://code.google.com/p/phpquery/issues/detail?id=130
+$pq = phpQuery::ajax(array(
+	'url' => 'http://'.$_SERVER['SERVER_NAME'].preg_replace('@/[^/]+$@', '/test_ajax_data_1', $_SERVER['REQUEST_URI']),
+	'success' => 'a789fhasdui3124',
+	'error' => 'jhdbg786213u8dsfg7y'
+));
+function a789fhasdui3124($html) {
+	$testName = 'AJAX request text node';
+	if ( $html == 'hello world' )
+		print "Test '$testName' PASSED :)";
+	else {
+		print "Test '$testName' <strong>FAILED</strong> !!! ";
+	}
+	print "\n";
+}
+
+function jhdbg786213u8dsfg7y() {
+	$testName = 'AJAX request text node';
+	print "Test '$testName' <strong>FAILED</strong> !!! ";
+}
+
+
 //$testName = 'gdata plugin';
 //phpQuery::extend('gdata');
 //$xhr = phpQuery::$plugins->gdata('tobiasz.cudnik@gmail.com', 'XXX');
