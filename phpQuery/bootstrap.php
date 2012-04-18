@@ -5,6 +5,11 @@
  * @copyright 2012
  */
 
+if (file_exists(dirname(__file__).'/bootstrap.options.php'))
+{
+	include(dirname(__file__).'/bootstrap.options.php');
+}
+
 require_once ('Zend/Loader/Autoloader.php');
 
 Zend_Loader_Autoloader::getInstance();
