@@ -5,7 +5,7 @@
  * @copyright 2012
  */
 
-set_include_path(get_include_path() . PATH_SEPARATOR . 'D:/Users/Documents/The Project/ZendFramework-1.x/library/');
+//set_include_path(get_include_path() . PATH_SEPARATOR . 'D:/Users/Documents/The Project/ZendFramework-1.x/library/');
 
 $_get_declared_classes = get_declared_classes();
 $_get_declared_interfaces = get_declared_interfaces();
