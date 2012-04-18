@@ -7,6 +7,10 @@
 
 require_once (dirname(__file__) . '/../bootstrap.php');
 
+$url = 'http://' . $_SERVER["HTTP_HOST"] . str_replace('r.php', 's.php', $_SERVER["PHP_SELF"]);
+
+phpQuery::ajaxAllowHost($_SERVER["HTTP_HOST"]);
+
 $data['function'] = 'addProduct';
 
 $doc = phpQuery::ajax(array(
