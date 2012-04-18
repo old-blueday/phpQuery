@@ -420,7 +420,7 @@ class phpQuery_Dom_DOMDocumentWrapper
 		$meta = '<meta http-equiv="Content-Type" content="text/html;charset=' . $charset . '" ' . ($xhtml ? '/' : '') . '>';
 		if (strpos($html, '<head') === false)
 		{
-			if (strpos($hltml, '<html') === false)
+			if (strpos($html, '<html') === false)
 			{
 				return $meta . $html;
 			}
