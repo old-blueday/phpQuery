@@ -5,7 +5,7 @@ set_include_path(
 	.':/home/bob/Sources/PHP/zend-framework/'
 );
 
-require_once('../phpQuery/phpQuery.php');
+require_once('../phpQuery/bootstrap.php');
 phpQuery::$debug = true;
 phpQuery::$ajaxAllowedHosts[] = 'wikipedia.org';
 phpQuery::$ajaxAllowedHosts[] = 'google.com';

@@ -1,14 +1,14 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <?php
-require_once('../phpQuery/phpQuery.php');
+require_once('../phpQuery/bootstrap.php');
 // phpQuery::$debug = true;
 
 $testName = 'Text node append';
 $result = phpQuery::newDocumentFile('test.html')
 	->find('li:first')
 		->find('p:first')
-			->html('żźć');
-if (trim($result->html()) == 'żźć')
+			->html('żź?');
+if (trim($result->html()) == 'żź?')
 	print "Test '{$testName}' passed :)<br />\n";
 else
 	print "Test '{$testName}' <strong>FAILED</strong> !!!<br />\n";
@@ -64,8 +64,8 @@ print "\n";
 $testName = 'Attr charset';
 $result = phpQuery::newDocumentFile('test.html')
 	->find('li:first')
-		->attr('test', 'foo &eacute; żźć bar');
-if (trim($result->attr('test')) == 'foo &eacute; żźć bar')
+		->attr('test', 'foo &eacute; żź? bar');
+if (trim($result->attr('test')) == 'foo &eacute; żź? bar')
 	print "Test '{$testName}' passed :)<br />\n";
 else {
 	print "Test '{$testName}' <strong>FAILED</strong> !!!<br />\n";

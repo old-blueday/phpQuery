@@ -1,6 +1,6 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <?php
-require_once('../phpQuery/phpQuery.php');
+require_once('../phpQuery/bootstrap.php');
 //phpQuery::$debug = 2;
 phpQuery::plugin('Scripts');
 
@@ -80,10 +80,10 @@ print $doc1->plugin('Scripts')->script('safe_print');
 // http://code.google.com/p/phpquery/issues/detail?id=76
 // mb_internal_encoding("UTF-8");
 // mb_regex_encoding("UTF-8");
-// $xml = phpQuery::newDocumentXML('<документа/>');
+// $xml = phpQuery::newDocumentXML('<док?мен?а/>');
 //
-// $xml['документа']->append('<список></список>');
-// $xml['документа список'] = '<эл>1</эл><эл>2</эл><эл>3</эл>';
+// $xml['док?мен?а']->append('<?пи?ок></?пи?ок>');
+// $xml['док?мен?а ?пи?ок'] = '<?л>1</?л><?л>2</?л><?л>3</?л>';
 // print "<xmp>$xml</xmp>";
 
 // zeromski 0.9.5 vs 0.9.1

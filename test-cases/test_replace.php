@@ -1,5 +1,5 @@
 <?php
-require_once('../phpQuery/phpQuery.php');
+require_once('../phpQuery/bootstrap.php');
 phpQuery::$debug = true;
 
 $testName = 'ReplaceWith';

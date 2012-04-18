@@ -1,6 +1,6 @@
 <?php
 //error_reporting(E_ALL);
-require_once('../phpQuery/phpQuery.php');
+require_once('../phpQuery/bootstrap.php');
 phpQuery::$debug = true;
 
 

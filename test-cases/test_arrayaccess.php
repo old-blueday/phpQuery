@@ -5,7 +5,7 @@ set_include_path(
 	.':/home/bob/Sources/PHP/zend-framework/'
 );
 
-require_once('../phpQuery/phpQuery.php');
+require_once('../phpQuery/bootstrap.php');
 phpQuery::$debug = true;
 $testHtml = phpQuery::newDocumentFile('test.html');
 $testHtml['li:first']->append('<span class="just-added">test</span>');
@@ -20,7 +20,7 @@ else {
 }
 print "\n";
 
-require_once('../phpQuery/phpQuery.php');
+require_once('../phpQuery/bootstrap.php');
 phpQuery::$debug = true;
 $testHtml = phpQuery::newDocumentFile('test.html');
 $testHtml['li:first'] = 'new inner html';
