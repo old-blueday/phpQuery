@@ -27,7 +27,7 @@ class jQueryServer
 	function __construct($data)
 	{
 		$pq = null;
-		include_once (dirname(__file__) . '/../phpQuery/phpQuery.php');
+		include_once (dirname(__file__) . '/../phpQuery/bootstrap.php');
 		if (file_exists(dirname(__file__) . '/jQueryServer.config.php'))
 		{
 			include_once (dirname(__file__) . '/jQueryServer.config.php');
