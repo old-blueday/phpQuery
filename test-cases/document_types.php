@@ -10,6 +10,9 @@
  *
  */
 class phpQuery {
+
+	public static $plugins = array();
+
 	static $defaultDocumentID;
 	static $debug = 0;
 	static $documents = array();
