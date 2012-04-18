@@ -19,7 +19,8 @@ class phpQuery {
 			print var_dump($text);
 	}
 }
-require_once('../phpQuery/phpQuery_Dom_DOMDocumentWrapper.php');
+//require_once('../phpQuery/phpQuery_Dom_DOMDocumentWrapper.php');
+require_once('../phpQuery/bootstrap.php');
 phpQuery::$debug = 2;
 
 /* ENCODINGS */
