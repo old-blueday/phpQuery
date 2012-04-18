@@ -14,3 +14,9 @@ $doc = phpQuery::ajax(array(
 	'url' => $url,
 	'data' => $data,
 	'success' => getJsCallback($doc)));
+
+
+function getJsCallback($doc)
+{
+	echo $doc;
+}
