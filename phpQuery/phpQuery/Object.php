@@ -3148,7 +3148,7 @@ class phpQuery_Object implements Iterator, Countable, ArrayAccess
 			if (isset($node->tagName))
 			{
 				$tag = in_array($node->tagName, array('php', 'js')) ? strtoupper($node->tagName) : $node->tagName;
-				$return[] = $tag . ($node->getAttribute('id') ? '#' . $node->getAttribute('id') : '') . ($node->getAttribute('class') ? '.' . join('.', split(' ', $node->getAttribute('class'))) : '') . ($node->getAttribute('name') ? '[name="' . $node->getAttribute('name') . '"]' : '') . ($node->getAttribute('value') && strpos($node->getAttribute('value'), '<' . '?php') === false ? '[value="' . substr(str_replace("\n", '', $node->getAttribute('value')), 0, 15) . '"]' : '') . ($node->getAttribute('value') &&
+				$return[] = $tag . ($node->getAttribute('id') ? '#' . $node->getAttribute('id') : '') . ($node->getAttribute('class') ? '.' . implode('.', explode(' ', $node->getAttribute('class'))) : '') . ($node->getAttribute('name') ? '[name="' . $node->getAttribute('name') . '"]' : '') . ($node->getAttribute('value') && strpos($node->getAttribute('value'), '<' . '?php') === false ? '[value="' . substr(str_replace("\n", '', $node->getAttribute('value')), 0, 15) . '"]' : '') . ($node->getAttribute('value') &&
 					strpos($node->getAttribute('value'), '<' . '?php') !== false ? '[value=PHP]' : '') . ($node->getAttribute('selected') ? '[selected]' : '') . ($node->getAttribute('checked') ? '[checked]' : '');
 			}
 			else
