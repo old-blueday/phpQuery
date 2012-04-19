@@ -57,9 +57,6 @@ class jQueryServer
 		{
 			$this->options = $data[0];
 			$ajax = $this->options;
-
-			unset($ajax['dataType']);
-
 			$this->calls = array_slice($data, 1);
 			$ajax['success'] = array($this, 'success');
 			phpQuery::ajax($ajax);
