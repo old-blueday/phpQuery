@@ -70,6 +70,7 @@ class jQueryServer
 			throw new Exception("URL needed to download content");
 		}
 	}
+
 	public function success($response)
 	{
 		$pq = phpQuery::newDocument($response);
