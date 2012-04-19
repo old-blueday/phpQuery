@@ -25,10 +25,15 @@ class jQueryServer
 	public $options = null;
 	public $allowedHosts = null;
 
+	public function newInstance($data, $jQueryServerConfig = array())
+	{
+		return new self($data, $jQueryServerConfig);
+	}
+
 	/**
 	 * @param string|$data - json string for parseJSON => array($this->options, $this->calls)
 	 */
-	function __construct($data)
+	function __construct($data, $jQueryServerConfig = array())
 	{
 		$pq = null;
 		include_once (dirname(__file__) . '/../phpQuery/bootstrap.php');
