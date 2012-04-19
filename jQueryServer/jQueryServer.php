@@ -37,11 +37,17 @@ class jQueryServer
 	{
 		$pq = null;
 		include_once (dirname(__file__) . '/../phpQuery/bootstrap.php');
-		if (file_exists(dirname(__file__) . '/jQueryServer.config.php'))
+
+		if (empty($jQueryServerConfig) && file_exists(dirname(__file__) . '/jQueryServer.config.php'))
 		{
 			include_once (dirname(__file__) . '/jQueryServer.config.php');
-			if ($jQueryServerConfig) $this->config = array_merge_recursive($this->config, $jQueryServerConfig);
 		}
+
+		if ($jQueryServerConfig)
+		{
+			$this->config = array_merge_recursive($this->config, (array)$jQueryServerConfig);
+		}
+
 		if ($this->config['refererMustMatch'])
 		{
 			foreach ($this->config['allowedRefererHosts'] as $i => $host)
