@@ -82,7 +82,10 @@ class jQueryServer
 				$pq = call_user_func_array(array($pq, $r['method']), $r['arguments']);
 			}
 		}
-		if (!isset($this->options['dataTypeRe'])) $this->options['dataTypeRe'] = '';
+		if (!isset($this->options['dataTypeRe']) && isset($this->options['dataTypeRe']))
+		{
+			$this->options['dataTypeRe'] = $this->options['dataType'];
+		}
 		switch (strtolower($this->options['dataTypeRe']))
 		{
 			case 'json':
