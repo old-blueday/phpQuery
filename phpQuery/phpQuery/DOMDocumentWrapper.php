@@ -311,7 +311,10 @@ class DOMDocumentWrapper {
 //		return strpos($markup, '<?xml') !== false && stripos($markup, 'xhtml') === false;
 		return strpos(substr($markup, 0, 100), '<'.'?xml') !== false;
 	}
+
 	protected function contentTypeToArray($contentType) {
+        $test = null;
+        $test =
 		$matches = explode(';', trim(strtolower($contentType)));
 		if (isset($matches[1])) {
 			$matches[1] = explode('=', $matches[1]);
@@ -386,7 +389,7 @@ class DOMDocumentWrapper {
 			.($xhtml ? '/' : '')
 			.'>';
 		if (strpos($html, '<head') === false) {
-			if (strpos($hltml, '<html') === false) {
+			if (strpos($html, '<html') === false) {
 				return $meta.$html;
 			} else {
 				return preg_replace(

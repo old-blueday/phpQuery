@@ -104,3 +104,6 @@ else {
 }
 print "\n";
 ?>
+
+
+<?php die();
