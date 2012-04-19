@@ -3,7 +3,7 @@
  *
  * Server-side Ajax requests supporting jQuery manipulations
  * before sending content to the browser.
- * 
+ *
  * Example:
  * $.server({url: ${URL})
  * 	.find('.my-class')
@@ -54,7 +54,7 @@ jQuery.extend({
 		}
 		/**
 		 * Fetches results from phpQuery.
-		 * 
+		 *
 		 * @param {Function} callback	Optional. Turns on async request.
 		 * First parameter for callback is usually an JSON array of mathed elements. Use $(result) to append it to DOM.
 		 * It can also be a boolean value or string, depending on last method called.
@@ -179,12 +179,13 @@ if (typeof $.toJSON == 'undefined') {
 	                return '"' + x + '"';
 	            }
 	        };
-	
+
 		$.toJSON = function(v) {
 			var f = isNaN(v) ? s[typeof v] : s['number'];
 			if (f) return f(v);
 		};
-		
+
+		/*
 		$.parseJSON = function(v, safe) {
             if (JSON)
                 return JSON.parse(v);
@@ -194,8 +195,9 @@ if (typeof $.toJSON == 'undefined') {
 				return undefined;
 			return eval('('+v+')');
 		};
-		
+
 		$.parseJSON.safe = false;
-	
+		*/
+
 	})(jQuery);
 }
