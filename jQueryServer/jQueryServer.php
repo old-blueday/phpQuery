@@ -45,7 +45,7 @@ class jQueryServer
 
 		if ($jQueryServerConfig)
 		{
-			$this->config = array_merge_recursive($this->config, (array)$jQueryServerConfig);
+			$this->config = array_merge_recursive($this->config, (array )$jQueryServerConfig);
 		}
 
 		if ($this->config['refererMustMatch'])
@@ -102,7 +102,7 @@ class jQueryServer
 		{
 			$this->options['dataTypeRe'] = $this->options['dataType'];
 		}
-		switch (strtolower($this->options['dataTypeRe']))
+		switch (strtolower((string )$this->options['dataTypeRe']))
 		{
 			case 'json':
 				if ($pq instanceof phpQuery_Object)
