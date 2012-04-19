@@ -21,7 +21,7 @@ function demo() {
 		.client(function(response){
 			$.each(response, function(k, li){
 				// for debug
-				$('ul').append(jQuery.type(li));
+				$('ul').append('<li>'+jQuery.type(li)+'</li>');
 				$('ul').append(li);
 			});
 		});
