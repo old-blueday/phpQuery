@@ -82,8 +82,8 @@ class jQueryServer
 				$pq = call_user_func_array(array($pq, $r['method']), $r['arguments']);
 			}
 		}
-		if (!isset($this->options['dataType'])) $this->options['dataType'] = '';
-		switch (strtolower($this->options['dataType']))
+		if (!isset($this->options['dataTypeRe'])) $this->options['dataTypeRe'] = '';
+		switch (strtolower($this->options['dataTypeRe']))
 		{
 			case 'json':
 				if ($pq instanceof phpQuery_Object)
