@@ -11,7 +11,11 @@ jQuery.serverConfig.url = '../jQueryServer.php';
 function demo() {
 	$.server({
 			url: document.location.toString(),
-			dataType: 'json'
+			/*
+			dataType: 'json',
+			*/
+			// dataType for Response
+			dataTypeRe: 'json'
 		})
 		.find('li')
 		.client(function(response){
