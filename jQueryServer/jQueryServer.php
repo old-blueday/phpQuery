@@ -24,6 +24,10 @@ class jQueryServer
 	public $calls = null;
 	public $options = null;
 	public $allowedHosts = null;
+
+	/**
+	 * @param string|$data - json string for parseJSON => array($this->options, $this->calls)
+	 */
 	function __construct($data)
 	{
 		$pq = null;
