@@ -89,7 +89,7 @@ class jQueryServer
 		switch (strtolower($this->options['dataType']))
 		{
 			case 'json':
-				if ($pq instanceof PHPQUERYOBJECT)
+				if ($pq instanceof phpQuery_Object)
 				{
 					$results = array();
 					foreach ($pq as $node) $results[] = pq($node)->htmlOuter();
@@ -97,7 +97,7 @@ class jQueryServer
 				}
 				else
 				{
-					print phpQuery::toJSON((string)$pq);
+					print phpQuery::toJSON($pq);
 				}
 				break;
 			default:
