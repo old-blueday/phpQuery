@@ -1,6 +1,6 @@
 <?php
 require_once 'PHPUnit/Autoload.php';
-require_once '../phpQuery/phpQuery.php';
+require_once '../phpQuery/bootstrap.php';
 //phpQuery::$debug = true;
 
 class phpQueryBasicTest extends PHPUnit_Framework_TestCase {
@@ -42,7 +42,7 @@ class phpQueryBasicTest extends PHPUnit_Framework_TestCase {
         );
         $pq = $pq->find('li')
             ->slice(1, 2);
-        
+
         $this->assertTrue( $pq->whois() == $testResult );
     }
 
@@ -62,7 +62,7 @@ class phpQueryBasicTest extends PHPUnit_Framework_TestCase {
 
         $pq = $pq->find('li')
             ->slice(1, -1);
-        
+
         $this->assertTrue( $pq->whois() == $testResult );
     }
 
@@ -107,7 +107,7 @@ class phpQueryBasicTest extends PHPUnit_Framework_TestCase {
         $document = null;
         $pq = $pq->toReference($document)
             ->find('p:first');
-        
+
         foreach(array(0,1,2) as $i) {
             $pq->clone()
                 ->addClass("clone-test")
