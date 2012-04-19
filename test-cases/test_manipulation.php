@@ -86,7 +86,7 @@ print "\n";
 
 $testName = 'HTML insertion';
 $doc = phpQuery::newDocument('<div><p/></div>');
-$string = "La Thermo-sonde de cuisson vous permet de cuire ? la perfection au four comme au bain-marie. Température: entre <b>0°C et 210°C</b>.";
+$string = "La Thermo-sonde de cuisson vous permet de cuire à la perfection au four comme au bain-marie. Température: entre <b>0°C et 210°C</b>.";
 $doc->find('p')->html($string);
 if (pq('p')->length == 1)
 	print "Test '{$testName}' PASSED :)";
@@ -99,7 +99,7 @@ print "\n";
 
 $testName = 'HTML insertion 2';
 $doc = phpQuery::newDocument('<div><p/></div>');
-$string = "<div>La Thermo-sonde de cuisson vous permet de cuire ? la perfection au four comme au bain-marie. Température: entre <b>0°C et 210°C</b>.</div>";
+$string = "<div>La Thermo-sonde de cuisson vous permet de cuire à la perfection au four comme au bain-marie. Température: entre <b>0°C et 210°C</b>.</div>";
 $doc->find('p')->html($string);
 if (pq('div')->length == 2) {
 	print "Test '{$testName}' PASSED :)";
@@ -114,7 +114,7 @@ $testName = 'HTML insertion 3';
 $doc = phpQuery::newDocument('<div><p/></div>');
 $string = 'Hors paragraphe.
 <img align="right" src="http://www.stlouisstpierre.com/institution/images/plan.jpg">
-<p>?ditorial de l\'institution Saint-Pierre.</p>
+<p>Éditorial de l\'institution Saint-Pierre.</p>
  Hors paragraphe.';
 $doc->find('p')->html($string);
 if (pq('img')->length == 1) {
@@ -131,7 +131,7 @@ print "\n";
 
 $testName = 'Text insertion';
 $doc = phpQuery::newDocument('<div><p/></div>');
-$string = "La Thermo-sonde de cuisson vous permet de cuire ? la perfection au four comme au bain-marie";
+$string = "La Thermo-sonde de cuisson vous permet de cuire à la perfection au four comme au bain-marie";
 $doc->find('p')->html($string);
 if (trim(pq('p:first')->html()) == $string)
 	print "Test '{$testName}' PASSED :)";

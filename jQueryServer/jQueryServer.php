@@ -64,7 +64,6 @@ class jQueryServer
 		else
 		{
 			throw new Exception("URL needed to download content");
-			break;
 		}
 	}
 	public function success($response)

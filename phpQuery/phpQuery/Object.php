@@ -2591,6 +2591,7 @@ class phpQuery_Object implements Iterator, Countable, ArrayAccess
 	 * Internal stack iterator.
 	 *
 	 * @access private
+	 * @return {Array.<DOMNode>}
 	 */
 	public function stack($nodeTypes = null)
 	{

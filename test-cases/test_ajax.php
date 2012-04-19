@@ -1,8 +1,8 @@
 <?php
 //error_reporting(E_ALL);
 set_include_path(
-	get_include_path()
-	.':/home/bob/Sources/PHP/zend-framework/'
+	get_include_path().PATH_SEPARATOR
+	.'zend-framework/'
 );
 
 require_once('../phpQuery/bootstrap.php');

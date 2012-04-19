@@ -186,7 +186,10 @@ if (typeof $.toJSON == 'undefined') {
 		};
 		
 		$.parseJSON = function(v, safe) {
-			if (safe === undefined) safe = $.parseJSON.safe;
+            if (JSON)
+                return JSON.parse(v);
+			if (safe === undefined)
+                safe = $.parseJSON.safe;
 			if (safe && !/^("(\\.|[^"\\\n\r])*?"|[,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t])+?$/.test(v))
 				return undefined;
 			return eval('('+v+')');
