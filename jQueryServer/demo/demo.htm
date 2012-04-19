@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>jQuery Server Plugin</title>
-	<script type="text/javascript" src='jquery.js'></script>
+	<script type="text/javascript" src='http://code.jquery.com/jquery-latest.pack.js'></script>
 	<script type="text/javascript" src='../jQueryServer.js'></script>
 	<script type="text/javascript">
 jQuery.serverConfig.url = '../jQueryServer.php';
@@ -16,6 +16,8 @@ function demo() {
 		.find('li')
 		.client(function(response){
 			$.each(response, function(k, li){
+				// for debug
+				$('ul').append(jQuery.type(li));
 				$('ul').append(li);
 			});
 		});
