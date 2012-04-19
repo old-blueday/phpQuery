@@ -82,6 +82,9 @@ class jQueryServer
 		}
 	}
 
+	/**
+	 * @param $response - phpQuery::httpData($response->getBody(), $options['dataType'], $options)
+	 */
 	public function success($response)
 	{
 		$pq = phpQuery::newDocument($response);
