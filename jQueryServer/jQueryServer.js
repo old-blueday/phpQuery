@@ -79,7 +79,7 @@ jQuery.extend({
 //				},
 //				success: success,
 				success: function(response){
-					if (options['dataType'] == 'json')
+					if (options['dataTypeRe'] == 'json')
 						response = $.parseJSON(response);
 					success(response);
 				},
